@@ -76,6 +76,16 @@ public class QuizController {
         return this.scoreCardRepository.save(scoreCard);
     }
 
+    @GetMapping
+    public List<Quiz> listQuizzes() {
+        return this.quizRepository.findAll();
+    }
+
+    @GetMapping("{id}")
+    public Quiz fetchQuiz(@PathVariable long id) {
+        return this.quizRepository.findById(id).orElse(null);
+    }
+
     @GetMapping("scores/{id}")
     public List<ScoreCard> getScores(@PathVariable("id")long id) {
 

@@ -50,6 +50,7 @@ public class AuthenticationController {
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             response.setSuccessful(true);
             response.setMessage("Login successful");
+            response.setUser(this.usersRepository.findByUsername(request.getUsername()).orElse(null));
             return response;
         }
 
