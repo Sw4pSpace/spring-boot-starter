@@ -20,7 +20,7 @@ public class Quiz {
 
     private String name;
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyy-MM-dd'T'hh:mm:ss.SSS'Z'")
     private Date dueDate;
 
     @JsonManagedReference
